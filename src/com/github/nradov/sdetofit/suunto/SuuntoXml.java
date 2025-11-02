@@ -123,7 +123,7 @@ public class SuuntoXml implements Dive, DivesSource {
 		final int sampleCount = Integer.valueOf(suunto.getElementsByTagName("SAMPLECNT").item(0).getTextContent());
 		final int sampleInterval = Integer
 				.valueOf(suunto.getElementsByTagName("SAMPLEINTERVAL").item(0).getTextContent());
-		final int diveSeconds = sampleCount * sampleInterval;
+		final int diveSeconds = (sampleCount + 1) * sampleInterval;
 		final NodeList samples = suunto.getElementsByTagName("SAMPLE");
 		final DateTime dateTime = new DateTime(start);
 
